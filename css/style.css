@@ -1,0 +1,239 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #FAFAFA;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px,293px));
+    grid-gap: 28px;
+    justify-content: center;
+    grid-template-areas: "hero bio bio"
+                         ". bio bio"
+                         "story . ."
+                         "foto-menu foto-menu foto-menu"
+                         "fotos-container fotos-container fotos-container";
+}
+
+.hero {
+    grid-area: hero;
+    padding: 0;
+}
+
+.hero-container {
+    padding-top: 60px;
+    margin: 0;
+    text-align: center;
+}
+
+.hero-container img {
+    vertical-align: top;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+}
+
+.bio {
+    padding-top: 60px;
+    grid-area: bio;
+    display: inline-block;
+    width: 100%;
+}
+
+.user {
+    display: inline;
+}
+
+.user h1 {
+    display: inline-block;
+    font-size: 28px;
+    line-height: 32px;
+    margin: -5px 0 -6px;
+    font-weight: normal;
+}
+
+.user button {
+    background-color: transparent;
+    height: 30px;
+    width: 95;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    font-weight: 600;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    padding: 5px 9px;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    line-height: 18px;
+    margin-left: 18px;
+    bottom: 4px;
+}
+
+.user span {
+    margin-left: 5px;
+    position: relative;
+    bottom: 2px;
+}
+
+.user button:hover {
+    cursor: pointer;
+}
+
+
+.user-properties ul {
+    padding: 0;
+    margin-bottom: 20px;
+    display: flex;
+    list-style: none;
+    font: inherit;
+    vertical-align: baseline;
+    color: #262626;
+    font-size: 17px;
+    line-height: 18px;
+}
+
+.user-properties ul li {
+    margin-left: 40px;
+}
+
+.user-properties ul li:first-child{
+    margin-left: 0px;
+}
+
+
+.numbers {
+    font-weight: 600;
+}
+
+
+.user-description{
+    font-size: 18px;
+    line-height: 24px;
+    word-wrap: break-word;
+    text-align: justify;
+    letter-spacing: 0.1px;
+}
+
+.user-realname {
+    font-weight: bold;
+}
+
+.website {
+    text-decoration: none;
+    color: rgb(3, 47, 92);
+    font-weight: bold;
+}
+
+.story {
+    grid-area: story;
+}
+
+.story img {
+    border-width: 4px;
+    border-color: #dbdbdb;
+    border-style: double;
+    width: 90px;
+    height: 90px;
+    border-radius: 200px;
+}
+
+.story figure, .story a {
+    margin:0;
+    width: 90px;
+}
+
+.story img:hover {
+    cursor: pointer;
+}
+
+.foto-menu {
+    grid-area: foto-menu;
+    border-top: 1px solid #dbdbdb;
+    position: relative;
+}
+
+.foto-menu ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style: none;
+    font: inherit;
+    vertical-align: baseline;
+    color: #262626;
+    font-size: 17px;
+    justify-content: center;
+}
+
+.foto-menu ul li {
+    margin-left: 40px;
+}
+
+.foto-menu ul li:first-child{
+    margin-left: 0px;
+}
+
+
+.fotos-container {
+    margin-top: -20px;
+    grid-area: fotos-container;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px,293px));
+    grid-gap: 28px;
+}
+
+.foto-link {
+    cursor: pointer;
+    position: relative;
+    display: block;
+}
+
+.foto-container {
+    margin: 0;
+}
+
+.foto {
+    width: 293px;
+    height: 293px;
+}
+
+.foto-overlay {
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    background: rgba(0, 0, 0, .4);
+    text-align: center;
+    display: none;
+}
+
+.foto-link:hover .foto-overlay {
+    display: flex;
+}
+
+.likes {
+    width: 80px;
+    margin:5px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
+
+.comments {
+    width: 80px;
+    margin: 5px;
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media screen and (max-width: 768){
+    .fotos-container {
+        grid-gap: 3px;
+    }
+}
