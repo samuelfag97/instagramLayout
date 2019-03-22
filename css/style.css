@@ -5,15 +5,88 @@ body {
 }
 
 .container {
+    margin:0;
+    padding-top: 55px;
     display: grid;
     grid-template-columns: repeat(3, minmax(100px,293px));
     grid-gap: 28px;
     justify-content: center;
-    grid-template-areas: "hero bio bio"
+    grid-template-areas: "nav nav nav"
+                         "hero bio bio"
                          ". bio bio"
                          "story . ."
                          "foto-menu foto-menu foto-menu"
                          "fotos-container fotos-container fotos-container";
+}
+
+nav {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px,293px));
+    grid-area: nav;
+    grid-template-areas: "nav1 nav2 nav3";
+    border-bottom: 1px solid #DBDBDB;
+    background: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    height: 77px;
+    justify-content: center;
+    grid-gap: 28px;
+    align-content: center;
+}
+
+.nav1 {
+    grid-area: nav1;
+}
+
+.nav1 a {
+    color: black;
+}
+
+.nav1 span {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    padding-right: 5px;
+    border-right: 1px solid black;
+}
+
+.nav1 span img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav1 p {
+    display: inline-block;
+    padding-left: 5px;
+}
+
+.nav2 {
+    grid-area: nav2;
+    padding-top: 11px;
+    padding-left: 15px;
+}
+
+.nav2 textarea {
+    width: 230px;
+    height: 22px;
+    border-radius: 3px;
+    background: #FAFAFA;
+    border-color: #DBDBDB;
+    border-style: solid;
+    border-width: 1px;
+    resize: none;
+    text-align: center;
+    padding-top: 5px;
+    font-style: inherit;
+    font-size: 14px;
+}
+
+.nav3 {
+    grid-area: nav3;
+    text-align: right;
 }
 
 .hero {
@@ -166,13 +239,31 @@ body {
     justify-content: center;
 }
 
-.foto-menu ul li {
-    margin-left: 40px;
+/* .foto-menu ul li {
+    width: 100px;
+} */
+
+.foto-menu ul a {
+    width: 63px;
+    height: 53px;
+    text-align: center;
+    margin-right: 63px;
+    text-decoration: none;
+    color: rgba(128, 128, 128, 0.425);
+    font-weight: 600;
 }
 
-.foto-menu ul li:first-child{
-    margin-left: 0px;
+.foto-menu ul a:last-child {
+    margin-right: 0px;
 }
+
+.foto-menu ul a:hover {
+    margin-top: -1px;
+    color: black;
+    border-top: 2px solid black;
+}
+
+
 
 
 .fotos-container {
@@ -181,21 +272,26 @@ body {
     display: grid;
     grid-template-columns: repeat(3, minmax(100px,293px));
     grid-gap: 28px;
+    grid-template-rows: repeat(auto-fill, minmax(100px,293px));
 }
 
 .foto-link {
     cursor: pointer;
     position: relative;
     display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .foto-container {
     margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .foto {
-    width: 293px;
-    height: 293px;
+    width: 100%;
+    height: 100%;
 }
 
 .foto-overlay {
@@ -232,8 +328,11 @@ body {
     text-align: center;
 }
 
-@media screen and (max-width: 768){
-    .fotos-container {
-        grid-gap: 3px;
+ @media screen and (max-width: 768px){
+        .container, .fotos-container  {
+            grid-gap: 3px;
+        }
+        .fotos-container {
+            margin-top: 5px;
+        }
     }
-}
